@@ -3,7 +3,13 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
-import { CustomButton, CustomButtonGroup, CustomTabs } from "./components";
+import {
+  Accordion,
+  Board,
+  CustomButton,
+  CustomButtonGroup,
+  CustomTabs,
+} from "./components";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 function App() {
   const [count, setCount] = useState(0);
@@ -42,9 +48,17 @@ function App() {
       content: "<div>사용자 알림2222 정보입니다.</div>",
     },
   ];
+
+  const noticeList = [
+    { id: 1, label: "타이틀1", content: "컴텐츠1" },
+    { id: 2, label: "타이틀2", content: "컴텐츠2" },
+    { id: 3, label: "타이틀3", content: "컴텐츠3" },
+  ];
+
   return (
     <>
       <section id="center">
+        <Accordion items={noticeList} />
         <div className="flex gap-6" style={{ width: "100%" }}>
           <h2>direction column</h2>
           <CustomButtonGroup $direction="column">
@@ -172,6 +186,7 @@ function App() {
             disabled
           />
         </div>
+        <Board />
         <CustomTabs items={tabItems} />
         <CustomTabs items={tabItems2} $fullWidth />
         <div className="hero">
