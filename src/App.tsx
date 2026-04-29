@@ -9,6 +9,10 @@ import {
   CustomButton,
   CustomButtonGroup,
   CustomTabs,
+  Dropdown,
+  Modal,
+  MyIntroduceCardList,
+  Tab,
 } from "./components";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 function App() {
@@ -58,6 +62,10 @@ function App() {
   return (
     <>
       <section id="center">
+        <Modal />
+        <Dropdown />
+        <Tab />
+        <MyIntroduceCardList userName="전미경" detail="내소개" />
         <Accordion items={noticeList} />
         <div className="flex gap-6" style={{ width: "100%" }}>
           <h2>direction column</h2>
